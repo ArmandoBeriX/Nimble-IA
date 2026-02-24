@@ -1,0 +1,31 @@
+/* Toasts & hint (nimble-toast.css) */
+.nimble-toasts { position: fixed; z-index: 99999; pointer-events: none; }
+.nimble-toasts--top-right { top: 12px; right: 12px; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.nimble-toast { pointer-events: auto; min-width:220px; max-width:360px; border-radius:10px; padding:10px 12px; box-shadow: 0 8px 30px rgba(2,6,23,0.18); color:#0f172a; display:flex; gap:8px; align-items:center; }
+.nimble-toast--info { background: #f8fafc; border: 1px solid #e6eef2; }
+.nimble-toast--success { background: #ecfdf5; border: 1px solid #bbf7d0; }
+.nimble-toast--error { background: #fff1f2; border: 1px solid #fecaca; }
+.nimble-toast-body { flex:1; font-size:14px; line-height:1.2; }
+.nimble-toast-close { background:transparent; border:0; font-size:18px; cursor:pointer; padding:4px; color:#6b7280; }
+
+.nimble-hint {
+  position: absolute;
+  z-index: 999999;
+  min-width: 160px;
+  max-width: 320px;
+  padding: 6px;
+  border-radius: 8px;
+  background: white;
+  color: #0f172a;
+  box-shadow: 0 4px 8px rgba(2,6,23,0.24);
+  border: 1px solid rgba(2,6,23,0.06);
+  transition: opacity .14s, transform .16s;
+  opacity: 0.0;
+  transform: translateY(6px);
+  pointer-events: none;
+  touch-action: none;
+}
+.nimble-hint-visible { opacity: 0.85; transform: translateY(0); pointer-events: auto; touch-action: manipulation;}
+/* allow interactive content inside hint */
+.nimble-hint a { color: #075985; text-decoration: underline; }
+.nimble-hint button { border: none; background: #0ea5a4; color: white; padding:6px 10px; border-radius:6px; cursor:pointer; }
