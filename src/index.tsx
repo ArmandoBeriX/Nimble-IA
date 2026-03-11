@@ -1,0 +1,49 @@
+/* @refresh reload */
+import "@thisbeyond/solid-select/style.css";
+
+import 'solid-devtools';
+import './index.css';
+import './assets/icons.txt';
+import './assets/modal.css';
+import './assets/toast.css';
+import './assets/components.css';
+import './assets/designer.css';
+import './assets/designer-page.css';
+import './assets/dark.css';
+
+import './components/fields/field.css'
+import "flatpickr/dist/flatpickr.css";
+
+import "./sections/TableList.css";
+
+
+// import { NimbleDBManager } from './lib/db';
+// import { SchemaCache } from './lib/schema-cache';
+// import { RecordsManager } from './lib/records-manager';
+
+import { render, Suspense } from 'solid-js/web';
+
+import App from './app';
+import { Router } from '@solidjs/router';
+import { routes } from './routes';
+import './i18n';
+import { I18nextProvider } from 'solid-i18next';
+import i18next from 'i18next';
+
+
+const root = document.getElementById('root')!;
+
+if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
+  throw new Error(
+    'Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got misspelled?',
+  );
+}
+
+render(
+  () => <Router root={(props) =>
+    <I18nextProvider i18n={i18next}>
+      <App>{props.children}</App>
+    </I18nextProvider>
+  }>{routes}</Router>,
+  root,
+);
