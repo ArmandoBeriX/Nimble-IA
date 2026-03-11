@@ -1,0 +1,408 @@
+/* =====================================================
+   SEMANTIC COMPONENT VARIABLES — Light (default)
+   Estos van aquí (en :root) porque son "por encima" del
+   color scale de Tailwind. Se sobreescriben en :root.dark.
+   ===================================================== */
+:root {
+  color: var(--color-black);
+  background-color: var(--color-white);
+  /* Inputs / Form groups */
+  --input-bg: #ffffff;
+  --input-bg-subtle: #fefefe;
+  --input-border: #d1d5db;
+  /* gray-300 */
+  --input-text: #111827;
+  /* gray-900 */
+  --input-label: #4b5563;
+  /* gray-600 */
+  --input-muted: #6b7280;
+  /* gray-500 */
+  --input-focus-border: #3b82f6;
+  /* blue-500 */
+  --input-focus-ring: color-mix(in srgb, #3b82f6 25%, transparent);
+
+  /* Form group container */
+  --formgroup-bg: color-mix(in srgb, #6b7280 3%, transparent);
+  --formgroup-border: color-mix(in srgb, #000000 11%, transparent);
+
+  /* Buttons */
+  --btn-primary-bg: #2563eb;
+  /* blue-600 */
+  --btn-primary-hover: #1d4ed8;
+  /* blue-700 */
+  --btn-primary-border: #2563eb;
+  --btn-primary-border-hov: #1d4ed8;
+
+  --btn-secondary-bg: #6b7280;
+  /* gray-500 */
+  --btn-secondary-hover: #4b5563;
+  /* gray-600 */
+
+  --btn-danger-bg: #dc2626;
+  /* red-600 */
+  --btn-danger-hover: #b91c1c;
+  /* red-700 */
+
+  --btn-success-bg: #16a34a;
+  /* green-600 */
+  --btn-success-hover: #15803d;
+  /* green-700 */
+
+  /* Alerts / States */
+  --state-danger-bg: color-mix(in srgb, #dc2626 5%, transparent);
+  --state-danger-border: #dc2626;
+  --state-danger-text: #dc2626;
+  --state-danger-ring: color-mix(in srgb, #dc2626 25%, transparent);
+  --state-danger-ring-2: color-mix(in srgb, #dc2626 22%, transparent);
+
+  --state-modified-bg: color-mix(in srgb, #16a34a 5%, transparent);
+  --state-modified-border: color-mix(in srgb, #16a34a 25%, transparent);
+  --state-modified-shadow: #4ade80;
+  /* green-400 */
+
+  /* Misc */
+  --icon-stroke: #1e40af;
+  /* blue-800 */
+  --divider-color: #e5e7eb;
+  /* gray-200 */
+  --required-color: #b91c1c;
+  /* red-700 */
+  --tooltip-bg: #1f2937;
+  /* gray-800 */
+  --tooltip-text: #f9fafb;
+  /* gray-50 */
+  --shadow-box: 1px 2px 5px color-mix(in srgb, #000 33%, transparent);
+
+  /* Switch */
+  --switch-track-off: #e5e7eb;
+  /* gray-200 */
+  --switch-track-on: #34d399;
+  /* green-400 */
+  --switch-knob: #ffffff;
+  --switch-focus-ring: color-mix(in srgb, #34d399 12%, transparent);
+
+  /* Backgrounds / Surfaces */
+  --surface-subtle: #f9fafb;
+  /* gray-50 */
+  --surface-card: #ffffff;
+  --border-subtle: #e9ecef;
+  --border-strong: #d1d5db;
+  /* gray-300 */
+
+  /* Select dropdown */
+  --select-list-shadow: 1px 2px 5px color-mix(in srgb, #000 53%, transparent);
+  --select-list-border: #9ca3af;
+  /* gray-400 */
+}
+
+
+/* =====================================================
+   :root.dark — Tailwind color scale (inverted 50 ↔ 950)
+   + Semantic overrides
+   ===================================================== */
+.solid-select-option[data-disabled="true"] {
+    color: var(--color-gray-400); 
+}
+.solid-select-option[data-focused="true"] {
+    background-color: var(--color-gray-200);
+    color:  var(--color-gray-800)
+}
+.solid-select-container {
+  background-color: var(--color-gray-200);
+  border-color: var(--color-gray-300);
+  color: var(--color-gray-700);
+}
+.solid-select-control {
+  border-color: var(--border-strong);
+}
+.solid-select-option {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+.solid-select-option:hover,
+.solid-select-option.focused {
+  background-color: var(--color-gray-300);
+}
+
+.solid-select-placeholder {
+  color: var(--color-gray-600);
+}
+
+.solid-select-multi-value {
+  background-color: var(--color-gray-200);
+}
+
+:root.dark {
+
+  /* ===== BLANCO / NEGRO ===== */
+  --color-white: #111827;
+  /* gray-900 — fondo principal dark */
+  --color-black: #eeeeee;
+
+  /* ===== GRIS ===== */
+  --color-gray-50: #1f2937;
+  /* gray-800 */
+  --color-gray-100: #374151;
+  /* gray-700  ← fix: antes era igual a white */
+  --color-gray-200: #4b5563;
+  /* gray-600 */
+  --color-gray-300: #6b7280;
+  /* gray-500 */
+  --color-gray-400: #9ca3af;
+  /* gray-400 */
+  --color-gray-500: #d1d5db;
+  /* gray-300 */
+  --color-gray-600: #e5e7eb;
+  /* gray-200 */
+  --color-gray-700: #f3f4f6;
+  /* gray-100 */
+  --color-gray-800: #f9fafb;
+  /* gray-50  */
+  --color-gray-900: #ffffff;
+  /* white    */
+  --color-gray-950: #ffffff;
+  /* white    */
+
+  /* ===== AZUL ===== */
+  --color-blue-50: #172554;
+  /* blue-950 */
+  --color-blue-100: #1e3a8a;
+  /* blue-900 */
+  --color-blue-200: #1e40af;
+  /* blue-800 */
+  --color-blue-300: #1d4ed8;
+  /* blue-700 */
+  --color-blue-400: #2563eb;
+  /* blue-600 */
+  --color-blue-500: #3b82f6;
+  /* blue-500 */
+  --color-blue-600: #60a5fa;
+  /* blue-400 */
+  --color-blue-700: #93c5fd;
+  /* blue-300 */
+  --color-blue-800: #bfdbfe;
+  /* blue-200 */
+  --color-blue-900: #dbeafe;
+  /* blue-100 */
+  --color-blue-950: #eff6ff;
+  /* blue-50  */
+
+  /* ===== ROJO ===== */
+  --color-red-50: #450a0a;
+  /* red-950 */
+  --color-red-100: #7f1d1d;
+  /* red-900 */
+  --color-red-200: #991b1b;
+  /* red-800 */
+  --color-red-300: #b91c1c;
+  /* red-700 */
+  --color-red-400: #dc2626;
+  /* red-600 */
+  --color-red-500: #ef4444;
+  /* red-500 */
+  --color-red-600: #f87171;
+  /* red-400 */
+  --color-red-700: #fca5a5;
+  /* red-300 */
+  --color-red-800: #fecaca;
+  /* red-200 */
+  --color-red-900: #fee2e2;
+  /* red-100 */
+  --color-red-950: #fef2f2;
+  /* red-50  */
+
+  /* ===== AMARILLO ===== */
+  --color-yellow-50: #451a03;
+  /* yellow-950 */
+  --color-yellow-100: #78350f;
+  /* yellow-900 */
+  --color-yellow-200: #92400e;
+  /* yellow-800 */
+  --color-yellow-300: #b45309;
+  /* yellow-700 */
+  --color-yellow-400: #d97706;
+  /* yellow-600 */
+  --color-yellow-500: #f59e0b;
+  /* yellow-500 */
+  --color-yellow-600: #fbbf24;
+  /* yellow-400 */
+  --color-yellow-700: #fcd34d;
+  /* yellow-300 */
+  --color-yellow-800: #fde68a;
+  /* yellow-200 */
+  --color-yellow-900: #fef3c7;
+  /* yellow-100 */
+  --color-yellow-950: #fffbeb;
+  /* yellow-50  */
+
+  /* ===== VERDE ===== */
+  --color-green-50: #052e16;
+  /* green-950 */
+  --color-green-100: #14532d;
+  /* green-900 */
+  --color-green-200: #166534;
+  /* green-800 */
+  --color-green-300: #15803d;
+  /* green-700 */
+  --color-green-400: #16a34a;
+  /* green-600 */
+  --color-green-500: #22c55e;
+  /* green-500 */
+  --color-green-600: #4ade80;
+  /* green-400 */
+  --color-green-700: #86efac;
+  /* green-300 */
+  --color-green-800: #bbf7d0;
+  /* green-200 */
+  --color-green-900: #dcfce7;
+  /* green-100 */
+  --color-green-950: #f0fdf4;
+  /* green-50  */
+
+  /* ===== CIAN ===== */
+  --color-cyan-50: #083344;
+  /* cyan-950 */
+  --color-cyan-100: #164e63;
+  /* cyan-900 */
+  --color-cyan-200: #155e75;
+  /* cyan-800 */
+  --color-cyan-300: #0e7490;
+  /* cyan-700 */
+  --color-cyan-400: #0891b2;
+  /* cyan-600 */
+  --color-cyan-500: #06b6d4;
+  /* cyan-500 */
+  --color-cyan-600: #22d3ee;
+  /* cyan-400 */
+  --color-cyan-700: #67e8f9;
+  /* cyan-300 */
+  --color-cyan-800: #a5f3fc;
+  /* cyan-200 */
+  --color-cyan-900: #cffafe;
+  /* cyan-100 */
+  --color-cyan-950: #ecfeff;
+  /* cyan-50  */
+
+  /* ===== ÍNDIGO ===== */
+  --color-indigo-50: #1e1b4b;
+  /* indigo-950 */
+  --color-indigo-100: #312e81;
+  /* indigo-900 */
+  --color-indigo-200: #3730a3;
+  /* indigo-800 */
+  --color-indigo-300: #4338ca;
+  /* indigo-700 */
+  --color-indigo-400: #4f46e5;
+  /* indigo-600 */
+  --color-indigo-500: #6366f1;
+  /* indigo-500 */
+  --color-indigo-600: #818cf8;
+  /* indigo-400 */
+  --color-indigo-700: #a5b4fc;
+  /* indigo-300 */
+  --color-indigo-800: #c7d2fe;
+  /* indigo-200 */
+  --color-indigo-900: #e0e7ff;
+  /* indigo-100 */
+  --color-indigo-950: #eef2ff;
+  /* indigo-50  */
+
+  /* ===== SOMBRAS ===== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.8);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.8);
+
+  /* ===== SEMANTIC OVERRIDES (dark) ===== */
+
+  /* Inputs */
+  --input-bg: #374151;
+  /* gray-700 */
+  --input-bg-subtle: #374151;
+  --input-border: #4b5563;
+  /* gray-600 */
+  --input-text: #f9fafb;
+  /* gray-50  */
+  --input-label: #d1d5db;
+  /* gray-300 */
+  --input-muted: #9ca3af;
+  /* gray-400 */
+  --input-focus-border: #60a5fa;
+  /* blue-400 */
+  --input-focus-ring: color-mix(in srgb, #60a5fa 25%, transparent);
+
+  /* Form group */
+  --formgroup-bg: color-mix(in srgb, #9ca3af 5%, transparent);
+  --formgroup-border: color-mix(in srgb, #ffffff 11%, transparent);
+
+  /* Buttons — se mantienen saturados (no invertidos) */
+  --btn-primary-bg: #3b82f6;
+  /* blue-500 */
+  --btn-primary-hover: #2563eb;
+  /* blue-600 */
+  --btn-primary-border: #3b82f6;
+  --btn-primary-border-hov: #2563eb;
+
+  --btn-secondary-bg: #9ca3af;
+  /* gray-400 */
+  --btn-secondary-hover: #6b7280;
+  /* gray-500 */
+
+  --btn-danger-bg: #ef4444;
+  /* red-500 */
+  --btn-danger-hover: #dc2626;
+  /* red-600 */
+
+  --btn-success-bg: #22c55e;
+  /* green-500 */
+  --btn-success-hover: #16a34a;
+  /* green-600 */
+
+  /* States */
+  --state-danger-bg: color-mix(in srgb, #ef4444 8%, transparent);
+  --state-danger-border: #ef4444;
+  --state-danger-text: #f87171;
+  /* red-400 — más visible en dark */
+  --state-danger-ring: color-mix(in srgb, #ef4444 25%, transparent);
+  --state-danger-ring-2: color-mix(in srgb, #ef4444 22%, transparent);
+
+  --state-modified-bg: color-mix(in srgb, #22c55e 5%, transparent);
+  --state-modified-border: color-mix(in srgb, #22c55e 25%, transparent);
+  --state-modified-shadow: #22c55e;
+
+  /* Misc */
+  --icon-stroke: #93c5fd;
+  /* blue-300 — visible en dark */
+  --divider-color: #374151;
+  /* gray-700 */
+  --required-color: #f87171;
+  /* red-400 */
+  --tooltip-bg: #4b5563;
+  /* gray-600 */
+  --tooltip-text: #f9fafb;
+  --shadow-box: 1px 2px 5px color-mix(in srgb, #000 60%, transparent);
+
+  /* Switch */
+  --switch-track-off: #4b5563;
+  /* gray-600 */
+  --switch-track-on: #22c55e;
+  /* green-500 */
+  --switch-knob: #f9fafb;
+
+  /* Surfaces */
+  --surface-subtle: #1f2937;
+  /* gray-800 */
+  --surface-card: #1f2937;
+  --border-subtle: #374151;
+  /* gray-700 */
+  --border-strong: #4b5563;
+  /* gray-600 */
+
+  /* Select */
+  --select-list-shadow: 1px 2px 5px color-mix(in srgb, #000 70%, transparent);
+  --select-list-border: #4b5563;
+
+  /* Input header hint bg */
+  --input-hint-bg: #374151;
+}
